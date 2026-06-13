@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  ::selection {
+    @apply bg-accent-purple/30 text-foreground;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-brand bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:shadow-glow hover:brightness-110 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-border-light bg-surface/50 px-6 py-2.5 text-sm font-medium text-foreground-secondary transition-all duration-200 hover:border-accent-purple/30 hover:bg-surface-hover hover:text-foreground;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-foreground-secondary transition-all duration-200 hover:bg-surface-hover hover:text-foreground;
+  }
+
+  .section-container {
+    @apply mx-auto max-w-6xl px-6 lg:px-8;
+  }
+
+  .feature-card {
+    @apply relative rounded-2xl border border-border bg-surface/40 p-6 backdrop-blur-sm transition-all duration-300 hover:border-accent-purple/20 hover:bg-surface/60 hover:shadow-card-hover;
+  }
+
+  .pricing-card {
+    @apply relative flex flex-col rounded-2xl border border-border bg-surface/40 p-8 backdrop-blur-sm transition-all duration-300;
+  }
+
+  .pricing-card-popular {
+    @apply border-accent-purple/30 bg-surface/60 shadow-glow;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border-light bg-surface/60 px-3 py-1 text-xs font-medium text-foreground-secondary;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-foreground-secondary transition-colors duration-200 hover:text-foreground;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
