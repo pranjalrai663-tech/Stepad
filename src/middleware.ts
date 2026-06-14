@@ -29,17 +29,16 @@ export async function middleware(request: NextRequest) {
     }
   );
 
-  // Do not run code between createServerClient and
-  // supabaseResponse.supabaseSessionHandler. This creates a deadlock.
-  // simply return the supabaseResponse as is.
+  // IMPORTANT: Do not run code between createServerClient and
+  // supabase.auth.getUser(). This creates a deadlock.
 
   const {
-    data: { session },
-  } = await supabase.auth.getSession();
+    data: { user },
+  } = await supabase.auth.getUser();
 
   // Protect dashboard route
   if (request.nextUrl.pathname.startsWith("/dashboard")) {
-    if (!session) {
+    if (!user) {
       const url = request.nextUrl.clone();
       url.pathname = "/login";
       return NextResponse.redirect(url);
@@ -48,7 +47,7 @@ export async function middleware(request: NextRequest) {
 
   // Redirect logged-in users away from login page
   if (request.nextUrl.pathname === "/login") {
-    if (session) {
+    if (user) {
       const url = request.nextUrl.clone();
       url.pathname = "/dashboard";
       return NextResponse.redirect(url);

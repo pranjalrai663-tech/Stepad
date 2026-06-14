@@ -5,14 +5,13 @@ import Logo from "@/components/Logo";
 export default async function DashboardPage() {
   const supabase = await createClient();
   const {
-    data: { session },
-  } = await supabase.auth.getSession();
+    data: { user },
+  } = await supabase.auth.getUser();
 
-  if (!session) {
+  if (!user) {
     redirect("/login");
   }
 
-  const user = session.user;
   const userEmail = user.email;
   const userName = user.user_metadata?.full_name || userEmail?.split("@")[0] || "Student";
 
