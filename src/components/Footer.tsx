@@ -34,7 +34,7 @@ export default function Footer() {
               AI-powered productivity for students. Clear the clutter, take
               your first step.
             </p>
-            <a href="#" className="btn-primary mt-6 inline-flex text-sm">
+            <a href="/login" className="btn-primary mt-6 inline-flex text-sm">
               Start for free
               <ArrowRight size={16} />
             </a>

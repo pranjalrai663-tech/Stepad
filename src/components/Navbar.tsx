@@ -42,10 +42,10 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a href="#" className="btn-ghost">
+          <a href="/login" className="btn-ghost">
             Login
           </a>
-          <a href="#" className="btn-primary">
+          <a href="/login" className="btn-primary">
             Open app
           </a>
         </div>
@@ -73,10 +73,10 @@ export default function Navbar() {
               </a>
             ))}
             <div className="mt-3 flex flex-col gap-2 border-t border-border pt-4">
-              <a href="#" className="btn-secondary w-full text-center">
+              <a href="/login" className="btn-secondary w-full text-center">
                 Login
               </a>
-              <a href="#" className="btn-primary w-full text-center">
+              <a href="/login" className="btn-primary w-full text-center">
                 Open app
               </a>
             </div>
